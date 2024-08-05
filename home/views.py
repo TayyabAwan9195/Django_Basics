@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
+from .utils import send_email_to_client
 
 def home(request):
     peoples=[
@@ -21,3 +22,6 @@ def contact(request):
 def success_page(request):
     context = {'page':'Success'}
     return HttpResponse(" This is a success page",context)
+def send_email(request):
+    send_email_to_client()
+    return HttpResponse("Message sent !!!! :)")

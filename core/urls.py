@@ -33,6 +33,10 @@ urlpatterns = [
     path('register/',register_page,name="register_page"),
     path('success-page/',success_page,name="success_page"),
     path('admin/', admin.site.urls),
+    path('student/',getstudent,name="get_student"),
+    path('seemarks/<student_id>/',see_marks,name="see_marks"),
+    path('mail/',send_email,name="send_email"),
+  
 ]
 if settings.DEBUG:
     urlpatterns +=static(settings.MEDIA_URL,
